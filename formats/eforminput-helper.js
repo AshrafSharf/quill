@@ -1,5 +1,3 @@
-import Link from '../formats/link';
-
 class EformInputHelper {
     static createCustomizeNode(node, value) {
         node.setAttribute('type', 'text');

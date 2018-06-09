@@ -147,6 +147,14 @@ BaseTheme.DEFAULTS = extend(true, {}, Theme.DEFAULTS, {
                 },
                 video: function () {
                     this.quill.theme.tooltip.edit('video');
+                },
+                eforminput: function () {
+                    let range = this.quill.getSelection(true);
+                    if (range != null) {
+                        let index = range.index + range.length;
+                        this.quill.insertEmbed(index, null, range.length, Emitter.sources.USER);
+                        this.quill.setSelection(index + 2, Emitter.sources.USER);
+                    }
                 }
 
             }

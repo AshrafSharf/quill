@@ -1,5 +1,5 @@
 
-import Inline from '../blots/inline';
+import Embed from '../blots/embed';
 import EformInputHelper from '../formats/eforminput-helper';
 
 
@@ -8,7 +8,7 @@ const ATTRIBUTES = [
   'width'
 ];
 
-class EformInput extends Inline {
+class EformInput extends Embed {
   static create(value) {
     let node = super.create(value);
     node = EformInputHelper.createCustomizeNode(node, value);
