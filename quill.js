@@ -22,6 +22,7 @@ import Underline from './formats/underline';
 
 import Image from './formats/image';
 import Video from './formats/video';
+import EformInput from './formats/eforminput';
 
 import CodeBlock, { Code as InlineCode } from './formats/code';
 
@@ -83,6 +84,7 @@ Quill.register({
 
   'formats/image': Image,
   'formats/video': Video,
+  'formats/eforminput': EformInput,
 
   'formats/list/item': ListItem,
 
