@@ -84,7 +84,7 @@ Quill.register({
 
   'formats/image': Image,
   'formats/video': Video,
-  'formats/eforminput': EformInput,
+    'formats/eforminput': EformInput,
 
   'formats/list/item': ListItem,
 

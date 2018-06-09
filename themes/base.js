@@ -147,11 +147,7 @@ BaseTheme.DEFAULTS = extend(true, {}, Theme.DEFAULTS, {
                 },
                 video: function () {
                     this.quill.theme.tooltip.edit('video');
-                },
-
-                eforminput: function () {
-                    this.quill.theme.tooltip.edit('eforminput');
-                },
+                }
 
             }
         }
@@ -223,20 +219,6 @@ class BaseTooltip extends Tooltip {
                 value = extractVideoUrl(value);
             } // eslint-disable-next-line no-fallthrough
             case 'formula':
-            {
-                if (!value) break;
-                let range = this.quill.getSelection(true);
-                if (range != null) {
-                    let index = range.index + range.length;
-                    this.quill.insertEmbed(index, this.root.getAttribute('data-mode'), value, Emitter.sources.USER);
-                    if (this.root.getAttribute('data-mode') === 'formula') {
-                        this.quill.insertText(index + 1, ' ', Emitter.sources.USER);
-                    }
-                    this.quill.setSelection(index + 2, Emitter.sources.USER);
-                }
-                break;
-            }
-            case 'eforminput':
             {
                 if (!value) break;
                 let range = this.quill.getSelection(true);
