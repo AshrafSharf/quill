@@ -1,6 +1,7 @@
 class EformInputHelper {
     static createCustomizeNode(node, value) {
-        let width = value * 10;
+        const widthAddingValue = 10;
+        let width = value.length * widthAddingValue;
         node.setAttribute('type', 'text');
         node.setAttribute('value', value);
         node.style.width =  width+"px";

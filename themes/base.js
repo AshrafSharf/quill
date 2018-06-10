@@ -153,7 +153,8 @@ BaseTheme.DEFAULTS = extend(true, {}, Theme.DEFAULTS, {
                     if (range.length == 0) return;
                     if (range != null) {
                         let index = range.index + range.length;
-                        this.quill.insertEmbed(index, "eforminput", range.length, Emitter.sources.USER);
+                        var text = this.quill.getText(range.index, range.length);
+                        this.quill.insertEmbed(index, "eforminput", text, Emitter.sources.USER);
                         this.quill.deleteText(range.index, range.length, "api");
                     }
                 }
