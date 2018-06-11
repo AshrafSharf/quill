@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css" rel="stylesheet">
-    <link href="https://cdn.quilljs.com/1.0.0/quill.snow.css" rel="stylesheet">
+    <link href="dist/quill.snow.css" rel="stylesheet">
 
 </head>
 <body>
@@ -25,6 +25,7 @@
 </div>
 <div>
     <button onclick="getEformInputs()">Get</button>
+    <button onclick="updateEformInputs()">Update</button>
     <button onclick="clearEformInputs()">Clear</button>
 </div>
 
@@ -42,6 +43,16 @@
     var eformInputMapper = {};
 
     function getEformInputs() {
+        let eformInputs = $(".ql-editor").find('input');
+        eformInputs.each(function (i, value) {
+            var key = $(this).data('eforminput'),
+                    value = $(this).val();
+            eformInputMapper[key] = value;
+        });
+        console.log(eformInputMapper);
+    }
+
+    function updateEformInputs(eformInputObj) {
         let eformInputs = $(".ql-editor").find('input');
         eformInputs.each(function (i, value) {
             var key = $(this).data('eforminput'),
