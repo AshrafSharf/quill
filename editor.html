@@ -5,24 +5,16 @@
     <title>Title</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css" rel="stylesheet">
     <link href="dist/quill.snow.css" rel="stylesheet">
+    <link href="quill.table.css" rel="stylesheet">
 
 </head>
 <body>
 <!-- Create the toolbar container -->
-<div id="toolbar">
-    <button class="ql-bold">Bold</button>
-    <button class="ql-italic">Italic</button>
-    <button class="ql-code">Code</button>
-    <button class="ql-link">Link</button>
-    <button class="ql-formula">Formula</button>
-    <button class="ql-video">Video</button>
-    <button class="ql-eforminput">EformInput</button>
-</div>
+<div id="toolbar"></div>
 
 <!-- Create the editor container -->
-<div id="editor">
-    <p>Eform Text Editor</p>
-</div>
+<div id="editor"></div>
+
 <div>
     <button onclick="getEformInputs()">Get</button>
     <button onclick="updateEformInputs()">Update</button>
@@ -35,10 +27,57 @@
 <script src="dist/quill.js"></script>
 <script>
 
-    var editor = new Quill('#editor', {
+   /* var editor = new Quill('#editor', {
         modules: {toolbar: '#toolbar'},
         theme: 'snow'
+    });*/
+
+    let maxRows = 10;
+    let maxCols = 5;
+    let tableOptions = [];
+    for (let r = 1; r <= maxRows; r++) {
+        for (let c = 1; c <= maxCols; c++) {
+            tableOptions.push('newtable_' + r + '_' + c);
+        }
+    }
+
+    let toolbarOptions = [
+        // Extended toolbar buttons
+        ['contain'],
+        [{ 'table': tableOptions }], // new table (cursor needs to be out of table)
+        [{ 'table': 'append-row' }], // cursor needs to be in the table
+        [{ 'table': 'append-col' }], // cursor needs to be in the table
+        // Extended toolbar buttons
+
+        ['bold', 'italic', 'underline', 'strike'],
+        ['blockquote', 'code-block'],
+
+        [{ 'header': 1 }, { 'header': 2 }],
+        [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+        [{ 'script': 'sub'}, { 'script': 'super' }],
+        [{ 'indent': '-1'}, { 'indent': '+1' }],
+        [{ 'direction': 'rtl' }],
+
+        [{ 'size': ['small', false, 'large', 'huge'] }],
+        [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+
+        [{ 'color': [] }, { 'background': [] }],
+        [{ 'align': [] }],
+
+        ['link', 'image', 'code-block'],
+
+        ['clean']
+    ];
+
+    let quill = new Quill('#editor', {
+        modules: {
+            toolbar: {
+                container: toolbarOptions,
+            }
+        },
+        theme: 'snow'
     });
+
 
     var eformInputMapper = {};
 
