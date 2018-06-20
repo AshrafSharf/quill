@@ -1,39 +1,44 @@
-/**
- * Created by ashraf on 6/19/18.
- */
 import Parchment from 'parchment';
 import Container from './container';
-import TableCell from './table_cell';
-
 
 class TableRow extends Container {
-
-    static create(value) {
+    static create() {
         let tagName = 'tr';
         let node = super.create(tagName);
-        node.setAttribute('row_id', value);
         return node;
     }
 
     optimize() {
         super.optimize();
-        let next = this.next;
-        if (next != null && next.prev === this &&
-            next.statics.blotName === this.statics.blotName &&
-            next.domNode.tagName === this.domNode.tagName &&
-            next.domNode.getAttribute('row_id') === this.domNode.getAttribute('row_id')) {
-            next.moveChildren(this);
-            next.remove();
+        var parent = this.parent
+        if (parent != null && parent.statics.blotName != 'table') {
+            this.processTable()
         }
     }
 
+    processTable() {
+        var currentBlot = this
+        var rows = []
+        while (currentBlot) {
+            if (!(currentBlot instanceof TableRow)) {
+                break
+            }
+            rows.push(currentBlot)
+            currentBlot = currentBlot.next
+        }
+        let mark = Parchment.create('block');
+        this.parent.insertBefore(mark, this.next);
+        let table = Parchment.create('table');
+        rows.forEach(function (row) {
+            table.appendChild(row)
+        })
+        table.replace(mark)
+    }
 }
 
 TableRow.blotName = 'tr';
 TableRow.tagName = 'tr';
 TableRow.scope = Parchment.Scope.BLOCK_BLOT;
 TableRow.defaultChild = 'td';
-TableRow.allowedChildren = [TableCell];
 
-
-export default TableRow
+export  default TableRow;

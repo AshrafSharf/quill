@@ -1,18 +1,9 @@
-#editor .ql-editor {
-    height: 300px;
-}
-
-#editor x-contain, contain {
-    background: #ffbb88;
-    display: block;
-}
-
-#editor table {
+.ql-editor table {
     width: 100%;
     border-collapse: collapse;
 }
 
-#editor table td {
+.ql-editor table td {
     border: 1px solid black;
     padding: 5px;
     height: 25px;
@@ -21,8 +12,8 @@
 button.ql-table::after { content: "TABLE"; }
 .ql-picker.ql-table .ql-picker-label::before { content: "TABLE"; }
 button.ql-contain::after { content: "WRAP"; }
-button.ql-table[value="append-row"]::after { content: "ROWS+"; }
-button.ql-table[value="append-col"]::after { content: "COLS+"; }
+button.ql-table-insert-rows::after { content: "ROWS+"; }
+button.ql-table-insert-columns::after { content: "COLS+"; }
 
 .ql-table,
 .ql-contain {
@@ -120,3 +111,7 @@ button.ql-table[value="append-col"]::after { content: "COLS+"; }
 .ql-picker-item[data-value=newtable_10_3]:before { content: "10x3"; }
 .ql-picker-item[data-value=newtable_10_4]:before { content: "10x4"; }
 .ql-picker-item[data-value=newtable_10_5]:before { content: "10x5"; }
+
+.tdbr, .trbr {
+    display: none
+}

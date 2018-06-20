@@ -152,6 +152,10 @@ BaseTheme.DEFAULTS = extend(true, {}, Theme.DEFAULTS, {
                     let range = this.quill.getSelection(true);
                     if (range.length == 0) return;
                     if (range != null) {
+                        let blot = this.quill.getLine(range.index);
+                        if(blot){
+                            blot = "just fake";
+                        }
                         let index = range.index + range.length;
                         var text = this.quill.getText(range.index, range.length);
                         this.quill.insertEmbed(index, "eforminput", text, Emitter.sources.USER);

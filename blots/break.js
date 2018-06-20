@@ -7,7 +7,7 @@ class Break extends Parchment.Embed {
   }
 
   insertInto(parent, ref) {
-    if (parent.children.length === 0) {
+    if (parent.children && parent.children.length === 0) {
       super.insertInto(parent, ref);
     } else {
       this.remove();
