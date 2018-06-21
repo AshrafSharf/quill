@@ -22,16 +22,13 @@ import Underline from './formats/underline';
 
 import Image from './formats/image';
 import Video from './formats/video';
-import EformInput from './formats/eforminput';
 import {TranslationMarker} from './formats/translation_marker';
 
 import CodeBlock, {Code as InlineCode} from './formats/code';
 
 import Formula from './modules/formula';
 import Syntax from './modules/syntax';
-// import Toolbar from './modules/toolbar';
-import Toolbar from './modules/toolbar_extended';
-import TableHandler from './modules/table_handler';
+import Toolbar from './modules/toolbar';
 
 import Icons from './ui/icons';
 import Picker from './ui/picker';
@@ -41,6 +38,25 @@ import Tooltip from './ui/tooltip';
 
 import BubbleTheme from './themes/bubble';
 import SnowTheme from './themes/snow';
+
+import Table from './blots/table';
+import TableHead from './blots/table_head';
+import TableRow from './blots/table_row';
+import TableCell from './blots/table_cell';
+import RowBreak from './blots/row_break';
+import CellBreak from './blots/cell_break';
+import ContainBlot from './blots/contain';
+
+
+Quill.register({
+    'blots/table'        : Table,
+    'blots/th'    : TableHead,
+    'blots/tr'    : TableRow,
+    'blots/td'   : TableCell,
+    'blots/contain'      : ContainBlot,
+    'blots/trbr'      : RowBreak,
+    'blots/tdbr'      : CellBreak
+}, true);
 
 
 Quill.register({
@@ -88,14 +104,12 @@ Quill.register({
 
 	'formats/image': Image,
 	'formats/video': Video,
-	'formats/eforminput': EformInput,
 
 	'formats/list/item': ListItem,
 
 	'modules/formula': Formula,
 	'modules/syntax': Syntax,
 	'modules/toolbar': Toolbar,
-	'modules/table': TableHandler,
 
 	'themes/bubble': BubbleTheme,
 	'themes/snow': SnowTheme,

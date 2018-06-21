@@ -26,14 +26,6 @@ button.ql-contain::after {
 	content: "WRAP";
 }
 
-button.ql-table-insert-rows::after {
-	content: "ROWS+";
-}
-
-button.ql-table-insert-columns::after {
-	content: "COLS+";
-}
-
 .ql-table,
 .ql-contain {
 	width: auto !important;

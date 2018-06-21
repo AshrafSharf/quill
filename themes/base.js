@@ -149,20 +149,6 @@ BaseTheme.DEFAULTS = extend(true, {}, Theme.DEFAULTS, {
 				video: function () {
 					this.quill.theme.tooltip.edit('video');
 				},
-				eforminput: function () {
-					let range = this.quill.getSelection(true);
-					if (range.length == 0) return;
-					if (range != null) {
-						let blot = this.quill.getLine(range.index);
-						if (blot) {
-							blot = "just fake";
-						}
-						let index = range.index + range.length;
-						var text = this.quill.getText(range.index, range.length);
-						this.quill.insertEmbed(index, "eforminput", text, Emitter.sources.USER);
-						this.quill.deleteText(range.index, range.length, "api");
-					}
-				},
 				translationMarker: function () {
 					this.quill.format('translationMarker', 'high');
 				}
