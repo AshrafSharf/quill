@@ -298,7 +298,22 @@ Keyboard.DEFAULTS = {
     'embed left': makeEmbedArrowHandler(Keyboard.keys.LEFT, false),
     'embed left shift': makeEmbedArrowHandler(Keyboard.keys.LEFT, true),
     'embed right': makeEmbedArrowHandler(Keyboard.keys.RIGHT, false),
-    'embed right shift': makeEmbedArrowHandler(Keyboard.keys.RIGHT, true)
+    'embed right shift': makeEmbedArrowHandler(Keyboard.keys.RIGHT, true),
+    'backspaceTable': {
+          key: 8,
+          format: ['td'],
+          // offset: 0,
+          handler: function(range) {
+              /* eslint-disable */
+              var formats = quill.getFormat(range.index-1, 1);
+              /* eslint-enable */
+              if (formats.tdbr || formats.trbr) {
+                  // prevent deletion of table break
+                  return false
+              }
+              return true
+          }
+    }
   }
 };
 

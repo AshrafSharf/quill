@@ -3,6 +3,7 @@ import Parchment from 'parchment';
 import Quill from '../core/quill';
 import logger from '../core/logger';
 import Module from '../core/module';
+import TableCell from '../blots/table_cell';
 
 let debug = logger('quill:toolbar');
 
@@ -198,6 +199,25 @@ function addSelect(container, format, values) {
   container.appendChild(input);
 }
 
+function getClosestNewLineIndex (contents, index) {
+    return index + contents.map(function (op) {
+            return typeof op.insert === 'string' ? op.insert : ' '
+        }).join('')
+            .slice(index)
+            .indexOf('\n')
+}
+
+function findTd(what) {
+    /* eslint-disable */
+    let leaf = quill.getLeaf(quill.getSelection()['index']);
+    /* eslint-enable */
+    let blot = leaf[0];
+    for(;blot!=null && blot.statics.blotName!=what;) {
+        blot=blot.parent;
+    }
+    return blot; // return TD or NULL
+}
+
 Toolbar.DEFAULTS = {
   container: null,
   handlers: {
@@ -253,7 +273,66 @@ Toolbar.DEFAULTS = {
       } else {
         this.quill.format('list', value, Quill.sources.USER);
       }
-    }
+    },
+    table: function (value) {
+          if(value && value.includes('newtable_')) {
+              let sizes = value.split('_');
+              let rows = Number.parseInt(sizes[1])
+              let columns = Number.parseInt(sizes[2])
+              const range = this.quill.getSelection()
+              if (!range) return
+              const newLineIndex = getClosestNewLineIndex(this.quill.getContents(), range.index + range.length)
+              let changeDelta = new Delta().retain(newLineIndex)
+              changeDelta = changeDelta.insert('\n')
+              for (let i = 0; i < rows; i++) {
+                  for (let j = 0; j < columns; j++) {
+                      changeDelta = changeDelta.insert('\n', {
+                          td: true
+                      })
+                      if (j < columns - 1) {
+                          changeDelta = changeDelta.insert({ tdbr: true })
+                      }
+                  }
+                  changeDelta = changeDelta.insert({ trbr: true })
+              }
+              this.quill.updateContents(changeDelta, Quill.sources.USER)
+              this.quill.setSelection(newLineIndex + 1)
+          } else {
+              // TODO
+          }
+      },
+    'table-insert-rows': function() {
+          let td = findTd('td')
+          if(td) {
+              let calCount = 0
+              td.parent.children.forEach(function (it) {
+                  if (it instanceof TableCell) {
+                      /* eslint-disable */
+                      calCount++
+                      /* eslint-enable */
+                  }
+              })
+              let table = td.parent.parent;
+              let newRow = td.parent.clone()
+              for (var i = calCount - 1; i >= 0; i--) {
+                  let td = Parchment.create('td');
+                  newRow.appendChild(td);
+                  newRow.appendChild(Parchment.create('tdbr'))
+              }
+              newRow.appendChild(Parchment.create('trbr'))
+              table.appendChild(newRow);
+          }
+      },
+    'table-insert-columns': function() {
+          let td = findTd('td')
+          if(td) {
+              td.parent.parent.children.forEach(function(tr) {
+                  let td = Parchment.create('td');
+                  tr.appendChild(td);
+                  tr.appendChild(Parchment.create('tdbr'))
+              });
+          }
+      }
   }
 }
 
