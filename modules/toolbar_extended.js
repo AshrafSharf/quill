@@ -26,7 +26,7 @@ function defaultToolbarOptions() {
 
         ['image'],
 
-        ['eforminput']
+        ['eforminput', 'translationMarker']
     ];
 }
 
