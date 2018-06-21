@@ -48,6 +48,7 @@ module.exports = {
   'video'     : require('../assets/icons/video.svg'),
   'translationMarker'     : require('../assets/icons/translationMarker.svg'),
   'contain'     : require('../assets/icons/contain.svg'),
+  'table'     : require('../assets/icons/table.svg'),
   'table-insert-rows'     : require('../assets/icons/table-insert-rows.svg'),
   'table-insert-columns'     : require('../assets/icons/table-insert-columns.svg')
 };
