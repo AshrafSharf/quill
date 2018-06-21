@@ -6,6 +6,7 @@ import Parchment from 'parchment';
 import Quill from '../core/quill';
 
 import Table from '../blots/table';
+import TableHead from '../blots/table_head';
 import TableRow from '../blots/table_row';
 import TableCell from '../blots/table_cell';
 import RowBreak from '../blots/row_break';
@@ -15,6 +16,7 @@ import ContainBlot from '../blots/contain';
 
 Quill.register({
     'blots/table'        : Table,
+    'blots/th'    : TableHead,
     'blots/tr'    : TableRow,
     'blots/td'   : TableCell,
     'blots/contain'      : ContainBlot,

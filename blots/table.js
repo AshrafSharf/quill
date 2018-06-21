@@ -1,6 +1,7 @@
 import Parchment from 'parchment';
 import Container from './container';
 import TableRow from './table_row';
+import TableHead from './table_head';
 
 class Table extends Container {
     optimize() {
@@ -20,6 +21,6 @@ Table.blotName = 'table';
 Table.tagName = 'table';
 Table.scope = Parchment.Scope.BLOCK_BLOT;
 Table.defaultChild = 'tr';
-Table.allowedChildren = [TableRow];
+Table.allowedChildren = [TableHead, TableRow];
 
 export default Table;
