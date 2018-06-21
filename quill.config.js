@@ -29,7 +29,11 @@ let quill = new Quill('#editor', {
     modules: {
         toolbar: {
             container: toolbarOptions
-        }
+        },
+        imageResize: {
+            displaySize: true
+        },
+        imageDrop: true
     },
     theme: 'snow'
 });
