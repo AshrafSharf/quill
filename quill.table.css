@@ -108,6 +108,26 @@ button.ql-contain::after {
 	content: "1x5";
 }
 
+.ql-picker-item[data-value=newtable_1_6]:before {
+    content: "1x6";
+}
+
+.ql-picker-item[data-value=newtable_1_7]:before {
+    content: "1x7";
+}
+
+.ql-picker-item[data-value=newtable_1_8]:before {
+    content: "1x8";
+}
+
+.ql-picker-item[data-value=newtable_1_9]:before {
+    content: "1x9";
+}
+
+.ql-picker-item[data-value=newtable_1_10]:before {
+    content: "1x10";
+}
+
 .ql-picker-item[data-value=newtable_2_1]:before {
 	content: "2x1";
 }
@@ -126,6 +146,26 @@ button.ql-contain::after {
 
 .ql-picker-item[data-value=newtable_2_5]:before {
 	content: "2x5";
+}
+
+.ql-picker-item[data-value=newtable_2_6]:before {
+	content: "2x6";
+}
+
+.ql-picker-item[data-value=newtable_2_7]:before {
+	content: "2x7";
+}
+
+.ql-picker-item[data-value=newtable_2_8]:before {
+	content: "2x8";
+}
+
+.ql-picker-item[data-value=newtable_2_9]:before {
+	content: "2x9";
+}
+
+.ql-picker-item[data-value=newtable_2_10]:before {
+	content: "2x10";
 }
 
 .ql-picker-item[data-value=newtable_3_1]:before {
@@ -148,6 +188,26 @@ button.ql-contain::after {
 	content: "3x5";
 }
 
+.ql-picker-item[data-value=newtable_3_6]:before {
+	content: "3x6";
+}
+
+.ql-picker-item[data-value=newtable_3_7]:before {
+	content: "3x7";
+}
+
+.ql-picker-item[data-value=newtable_3_8]:before {
+	content: "3x8";
+}
+
+.ql-picker-item[data-value=newtable_3_9]:before {
+	content: "3x9";
+}
+
+.ql-picker-item[data-value=newtable_3_10]:before {
+	content: "3x10";
+}
+
 .ql-picker-item[data-value=newtable_4_1]:before {
 	content: "4x1";
 }
@@ -166,6 +226,26 @@ button.ql-contain::after {
 
 .ql-picker-item[data-value=newtable_4_5]:before {
 	content: "4x5";
+}
+
+.ql-picker-item[data-value=newtable_4_6]:before {
+	content: "4x6";
+}
+
+.ql-picker-item[data-value=newtable_4_7]:before {
+	content: "4x7";
+}
+
+.ql-picker-item[data-value=newtable_4_8]:before {
+	content: "4x8";
+}
+
+.ql-picker-item[data-value=newtable_4_9]:before {
+	content: "4x9";
+}
+
+.ql-picker-item[data-value=newtable_4_10]:before {
+	content: "4x10";
 }
 
 .ql-picker-item[data-value=newtable_5_1]:before {
@@ -188,6 +268,26 @@ button.ql-contain::after {
 	content: "5x5";
 }
 
+.ql-picker-item[data-value=newtable_5_6]:before {
+	content: "5x6";
+}
+
+.ql-picker-item[data-value=newtable_5_7]:before {
+	content: "5x7";
+}
+
+.ql-picker-item[data-value=newtable_5_8]:before {
+	content: "5x8";
+}
+
+.ql-picker-item[data-value=newtable_5_9]:before {
+	content: "5x9";
+}
+
+.ql-picker-item[data-value=newtable_5_10]:before {
+	content: "5x10";
+}
+
 .ql-picker-item[data-value=newtable_6_1]:before {
 	content: "6x1";
 }
@@ -206,6 +306,26 @@ button.ql-contain::after {
 
 .ql-picker-item[data-value=newtable_6_5]:before {
 	content: "6x5";
+}
+
+.ql-picker-item[data-value=newtable_6_6]:before {
+	content: "6x6";
+}
+
+.ql-picker-item[data-value=newtable_6_7]:before {
+	content: "6x7";
+}
+
+.ql-picker-item[data-value=newtable_6_8]:before {
+	content: "6x8";
+}
+
+.ql-picker-item[data-value=newtable_6_9]:before {
+	content: "6x9";
+}
+
+.ql-picker-item[data-value=newtable_6_10]:before {
+	content: "6x10";
 }
 
 .ql-picker-item[data-value=newtable_7_1]:before {
@@ -228,6 +348,26 @@ button.ql-contain::after {
 	content: "7x5";
 }
 
+.ql-picker-item[data-value=newtable_7_6]:before {
+	content: "7x6";
+}
+
+.ql-picker-item[data-value=newtable_7_7]:before {
+	content: "7x7";
+}
+
+.ql-picker-item[data-value=newtable_7_8]:before {
+	content: "7x8";
+}
+
+.ql-picker-item[data-value=newtable_7_9]:before {
+	content: "7x9";
+}
+
+.ql-picker-item[data-value=newtable_7_10]:before {
+	content: "7x10";
+}
+
 .ql-picker-item[data-value=newtable_8_1]:before {
 	content: "8x1";
 }
@@ -246,6 +386,26 @@ button.ql-contain::after {
 
 .ql-picker-item[data-value=newtable_8_5]:before {
 	content: "8x5";
+}
+
+.ql-picker-item[data-value=newtable_8_6]:before {
+	content: "8x6";
+}
+
+.ql-picker-item[data-value=newtable_8_7]:before {
+	content: "8x7";
+}
+
+.ql-picker-item[data-value=newtable_8_8]:before {
+	content: "8x8";
+}
+
+.ql-picker-item[data-value=newtable_8_9]:before {
+	content: "8x9";
+}
+
+.ql-picker-item[data-value=newtable_8_10]:before {
+	content: "8x10";
 }
 
 .ql-picker-item[data-value=newtable_9_1]:before {
@@ -268,6 +428,26 @@ button.ql-contain::after {
 	content: "9x5";
 }
 
+.ql-picker-item[data-value=newtable_9_6]:before {
+	content: "9x6";
+}
+
+.ql-picker-item[data-value=newtable_9_7]:before {
+	content: "9x7";
+}
+
+.ql-picker-item[data-value=newtable_9_8]:before {
+	content: "9x8";
+}
+
+.ql-picker-item[data-value=newtable_9_9]:before {
+	content: "9x9";
+}
+
+.ql-picker-item[data-value=newtable_9_10]:before {
+	content: "9x10";
+}
+
 .ql-picker-item[data-value=newtable_10_1]:before {
 	content: "10x1";
 }
@@ -286,6 +466,26 @@ button.ql-contain::after {
 
 .ql-picker-item[data-value=newtable_10_5]:before {
 	content: "10x5";
+}
+
+.ql-picker-item[data-value=newtable_10_6]:before {
+	content: "10x6";
+}
+
+.ql-picker-item[data-value=newtable_10_7]:before {
+	content: "10x7";
+}
+
+.ql-picker-item[data-value=newtable_10_8]:before {
+	content: "10x8";
+}
+
+.ql-picker-item[data-value=newtable_10_9]:before {
+	content: "10x9";
+}
+
+.ql-picker-item[data-value=newtable_10_10]:before {
+	content: "10x10";
 }
 
 .tdbr, .trbr {
