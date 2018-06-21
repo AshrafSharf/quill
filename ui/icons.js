@@ -50,5 +50,6 @@ module.exports = {
   'contain'     : require('../assets/icons/contain.svg'),
   'table'     : require('../assets/icons/table.svg'),
   'table-insert-rows'     : require('../assets/icons/table-insert-rows.svg'),
-  'table-insert-columns'     : require('../assets/icons/table-insert-columns.svg')
+  'table-insert-columns'     : require('../assets/icons/table-insert-columns.svg'),
+  'divider'     : require('../assets/icons/divider.svg')
 };

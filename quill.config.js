@@ -18,9 +18,9 @@ let toolbarOptions = [
     [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
 
     [{ 'color': [] }, { 'background': [] }],
-    [{ 'align': [] }, {'font': []}],
+    [{ 'align': [] }],
 
-    ['image'],
+    ['image', 'divider'],
 
     ['translationMarker']
 ];

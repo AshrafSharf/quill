@@ -40,6 +40,7 @@ import BubbleTheme from './themes/bubble';
 import SnowTheme from './themes/snow';
 
 import Table from './blots/table';
+import Divider from './blots/divider';
 import TableHead from './blots/table_head';
 import TableRow from './blots/table_row';
 import TableCell from './blots/table_cell';
@@ -49,6 +50,7 @@ import ContainBlot from './blots/contain';
 
 
 Quill.register({
+    'blots/divider'        : Divider,
     'blots/table'        : Table,
     'blots/th'    : TableHead,
     'blots/tr'    : TableRow,
