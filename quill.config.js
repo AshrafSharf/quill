@@ -20,9 +20,9 @@ let toolbarOptions = [
     [{ 'color': [] }, { 'background': [] }],
     [{ 'align': [] }],
 
-    ['image', 'divider'],
+    ['image', 'divider', 'pagebreak'],
 
-    ['translationMarker']
+    ['translationmarker']
 ];
 
 let quill = new Quill('#editor', {
@@ -38,3 +38,31 @@ let quill = new Quill('#editor', {
     theme: 'snow'
 });
 
+var translationMarkerMapper = {};
+
+function getEformInputs() {
+    let translateionMarkers = $(".ql-editor").find('.ql-translation-marker');
+    translateionMarkers.each(function (i, value) {
+        var key = $(this).attr('markerid'),
+            value = $(this).text();
+        translationMarkerMapper[key] = value;
+    });
+    console.log(translationMarkerMapper);
+}
+
+function loadEformInputs() {
+    var templateHtml = '<p class="ql-align-center"><strong>Customer – Bank Account Information</strong></p><p><strong>Dear</strong> <em class="ql-translation-marker" markerid="H14vKV9-7">John Doe</em></p><p><strong>Customer number </strong>: <em class="ql-translation-marker" markerid="SyovtVcWQ">9100023020</em></p><p><br></p><p><br></p><p><br></p>';
+    quill.clipboard.dangerouslyPasteHTML(templateHtml);
+}
+
+function clearEformInputs() {
+    let translateionMarkers = $(".ql-editor").find('.ql-translation-marker');
+    translateionMarkers.each(function (i, value) {
+        $(this).text('--');
+    });
+
+    for (var prop in translationMarkerMapper) {
+        translationMarkerMapper[prop] = ""
+    }
+    console.log(translationMarkerMapper);
+}

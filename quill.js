@@ -41,6 +41,7 @@ import SnowTheme from './themes/snow';
 
 import Table from './blots/table';
 import Divider from './blots/divider';
+import PageBreak from './blots/pagebreak';
 import TableHead from './blots/table_head';
 import TableRow from './blots/table_row';
 import TableCell from './blots/table_cell';
@@ -50,6 +51,7 @@ import ContainBlot from './blots/contain';
 
 
 Quill.register({
+    'blots/pagebreak'        : PageBreak,
     'blots/divider'        : Divider,
     'blots/table'        : Table,
     'blots/th'    : TableHead,
@@ -70,7 +72,7 @@ Quill.register({
 	'attributors/class/direction': DirectionClass,
 	'attributors/class/font': FontClass,
 	'attributors/class/size': SizeClass,
-	'attributors/class/translationMarker': TranslationMarker,
+	'attributors/class/translation': TranslationMarker,
 
 	'attributors/style/align': AlignStyle,
 	'attributors/style/background': BackgroundStyle,
@@ -85,7 +87,7 @@ Quill.register({
 	'formats/align': AlignClass,
 	'formats/direction': DirectionClass,
 	'formats/indent': Indent,
-	'formats/translationMarker': TranslationMarker,
+	'formats/translation': TranslationMarker,
 	'formats/background': BackgroundStyle,
 	'formats/color': ColorStyle,
 	'formats/font': FontClass,

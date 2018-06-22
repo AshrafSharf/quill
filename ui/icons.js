@@ -46,10 +46,11 @@ module.exports = {
   'strike'    : require('../assets/icons/strike.svg'),
   'underline' : require('../assets/icons/underline.svg'),
   'video'     : require('../assets/icons/video.svg'),
-  'translationMarker'     : require('../assets/icons/translationMarker.svg'),
+  'translationmarker'     : require('../assets/icons/translationMarker.svg'),
   'contain'     : require('../assets/icons/contain.svg'),
   'table'     : require('../assets/icons/table.svg'),
   'table-insert-rows'     : require('../assets/icons/table-insert-rows.svg'),
   'table-insert-columns'     : require('../assets/icons/table-insert-columns.svg'),
-  'divider'     : require('../assets/icons/divider.svg')
+  'divider'     : require('../assets/icons/divider.svg'),
+  'pagebreak'     : require('../assets/icons/pagebreak.svg')
 };

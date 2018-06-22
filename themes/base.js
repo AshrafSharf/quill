@@ -149,8 +149,8 @@ BaseTheme.DEFAULTS = extend(true, {}, Theme.DEFAULTS, {
 				video: function () {
 					this.quill.theme.tooltip.edit('video');
 				},
-				translationMarker: function () {
-					this.quill.format('translationMarker', 'high');
+                translationmarker: function () {
+					this.quill.format('translation', 'marker');
 				}
 
 			}
