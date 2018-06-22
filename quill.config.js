@@ -51,7 +51,7 @@ function getEformInputs() {
 }
 
 function loadEformInputs() {
-    var templateHtml = '<p class="ql-align-center"><strong>Customer – Bank Account Information</strong></p><p><strong>Dear</strong> <em class="ql-translation-marker" markerid="H14vKV9-7">John Doe</em></p><p><strong>Customer number </strong>: <em class="ql-translation-marker" markerid="SyovtVcWQ">9100023020</em></p><p><br></p><p><br></p><p><br></p>';
+    var templateHtml = '<p><br></p><table><tr><td><p>Comp</p></td><td><p>Provility</p></td></tr></table><p><br></p>';
     quill.clipboard.dangerouslyPasteHTML(templateHtml);
 }
 
