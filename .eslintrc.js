@@ -27,10 +27,6 @@ module.exports = {
     ],
     "block-scoped-var": "off",
     "block-spacing": "error",
-    "brace-style": [
-      "error",
-      "1tbs"
-    ],
     "callback-return": "error",
     "camelcase": "error",
     "class-methods-use-this": "off",
@@ -160,12 +156,6 @@ module.exports = {
     "no-octal-escape": "error",
     "no-param-reassign": "off",
     "no-path-concat": "error",
-    "no-plusplus": [
-      "error",
-      {
-        "allowForLoopAfterthoughts": true
-      }
-    ],
     "no-process-env": "error",
     "no-process-exit": "error",
     "no-proto": "error",
