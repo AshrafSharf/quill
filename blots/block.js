@@ -5,7 +5,6 @@ import Break from './break';
 import Inline from './inline';
 import TextBlot from './text';
 
-
 const NEWLINE_LENGTH = 1;
 
 

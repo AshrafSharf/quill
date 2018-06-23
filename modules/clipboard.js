@@ -148,7 +148,7 @@ class Clipboard extends Module {
 Clipboard.DEFAULTS = {
     matchers: [
         ['TD, TH', function (node, delta) {
-            delta.insert("\n", {td: true})
+          //  delta.insert("\n", {td: true})
             delta.insert({tdbr: true})
             return delta
         }],
