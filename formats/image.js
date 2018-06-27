@@ -4,7 +4,8 @@ import { sanitize } from '../formats/link';
 const ATTRIBUTES = [
   'alt',
   'height',
-  'width'
+  'width',
+  'style'
 ];
 
 
