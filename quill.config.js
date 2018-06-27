@@ -50,9 +50,10 @@ quill.clipboard.options.matchVisual = false;
 var translationMarkerMapper = {};
 
 function getEformInputs() {
-    let editor = $(".ql-editor").html();
-    //let htmlTemp = editor[0].innerHtml;
+    /*let editor = quill.getContents();
+    let htmlTemp = $(".ql-editor").html();
     console.log(editor);
+    console.log(htmlTemp);*/
 	let translateionMarkers = $(".ql-editor").find('.ql-translation-marker');
 	translateionMarkers.each(function (i, value) {
 		var key = $(this).attr('markerid'),
@@ -63,8 +64,19 @@ function getEformInputs() {
 }
 
 function loadEformInputs() {
-	var templateHtml = '<p><br></p><hr class="divider" style="border-top: none; border-right: none; border-bottom: 2px solid lightgray; border-left: none; border-image: initial;">'
+	var templateHtml = '<p>Hello <strong>World!</strong></p><hr class="ql-divider"><p>Test <strong>World!</strong></p><hr class="ql-divider">'
 	quill.clipboard.dangerouslyPasteHTML(templateHtml);
+    /*var delta = [
+     { insert: 'Hello ' },
+     { insert: 'World!', attributes: { bold: true } },
+     { insert: '\n' },
+     { insert: '\n', attributes: { divider: true } },
+     { insert: 'Test ' },
+     { insert: 'World!', attributes: { bold: true } },
+     { insert: '\n' },
+     { insert: '\n', attributes: { divider: true } }
+     ]
+    quill.setContents(delta);*/
 }
 
 function clearEformInputs() {

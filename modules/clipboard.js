@@ -155,6 +155,10 @@ Clipboard.DEFAULTS = {
         ['TR', function (node, delta) {
             delta.insert({trbr: true})
             return delta
+        }],
+        ['HR', function (node, delta) {
+            delta.insert({divider: true})
+            return delta
         }]
     ],
     matchVisual: true
